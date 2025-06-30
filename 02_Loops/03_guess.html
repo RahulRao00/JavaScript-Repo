@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess</title>
+  </head>
+  <body>
+
+    <script>
+
+
+      let fav = "Robot";
+      let guess = prompt("Guess the movie name:");
+
+
+      // Jab tak guess sahi nahi hota, repeat karo
+      while (fav !== guess.toString()) {
+        guess = prompt("Guess again:");
+      }
+
+      alert("Your guess is right! 🎉 Congratulation");
+    
+    </script>
+  
+  </body>
+</html>

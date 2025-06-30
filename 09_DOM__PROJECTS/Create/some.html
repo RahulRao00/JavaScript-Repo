@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #616161;">
+
+        <h1 style="display: flex; justify-content: center;">TODO</h1>
+        <div id="div">
+
+            <input type="text">
+            <button id="btn">Add TODO</button>
+
+        </div>
+
+           <!-- this one is the first input including in the same as the   -->
+
+        <script>
+
+            document.querySelector('#btn').addEventListener( 'click', () => {
+            let newDiv = document.createElement('div')
+            newDiv.innerHTML = '<p> Todo is added </p>'
+            newDiv.innerHTML = ' <button id="btn">Add TODO</button> '
+            document.querySelector('body').appendChild(newDiv).addEventListener()
+            })
+
+
+        </script>
+    
+</body>
+</html>

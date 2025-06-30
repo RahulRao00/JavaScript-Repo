@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVENTS</title>
+  </head>
+  <body>
+    <!-- 
+    different typesOf event, timestamp, defaultPrevented
+    target, toElement, srcElement, currentTarget 
+    clintX, clintY, screenX, screenY
+    altKey, ctrlKey, shiftKey, keyCode     
+    -->
+
+    <h1>this is heading</h1>
+
+    <script>
+      const body = document.querySelector("body");
+      body.style.backgroundColor = "#212121";
+      body.addEventListener("mousemove", (event) => {
+        console.log(event);
+
+        console.log(event.screenX, event.screenY, event.pageX);
+        console.log("Mouse is moving ");
+      });
+
+      function some(event1, event2) {}
+    </script>
+  </body>
+</html>

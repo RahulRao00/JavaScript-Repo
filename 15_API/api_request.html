@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub User Info</title>
+</head>
+<body style="background-color: #313131; color: white;">
+
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    console.log("Requesting:", requestUrl);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+
+    xhr.onreadystatechange = function () {
+      console.log("Ready State:", xhr.readyState);
+
+      // Ready state 4 means request is done
+      // Status 200 means success
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const data = JSON.parse(this.responseText);
+
+        console.log("Response data:", data);
+        console.log(`Type of data: ${typeof data}`);
+        console.log(`Followers: ${data.followers}`);
+        console.log(`ID: ${data.id}`);
+        console.log(`Email: ${data.email}`); // likely null or empty for GitHub API unless public
+      }
+    };
+
+    xhr.send();
+  </script>
+
+</body>
+</html>

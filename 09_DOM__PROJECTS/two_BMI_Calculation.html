@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculation</title>
+    <style>
+
+        body {
+            background: #000;
+            color: rgb(240, 232, 232);
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        
+        #div {
+            padding: 10px;
+            background: #616060;
+            border: 1px solid black;
+            border-radius: 10px;
+            align-self: center;
+        }
+
+        #btn {
+            background: #000;
+            color: rgb(235, 19, 19);
+            padding: 10px;
+            margin-top: 40px;
+        }
+        
+        #foot{
+            color: rgb(16, 12, 11);
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div id="div">
+        <h1 style="color: #000;">BMI CALCULATOR</h1>
+        <form action="">
+
+            <label for="height">Height in cm : </label>
+            <input type="text" name="height" id="height" placeholder="Enter height">
+
+            <br><br>
+            <label for="weight">Weight in Kg : </label>
+            <input type="text" name="weight" id="weight" placeholder="Enter Weight">
+
+            <br>
+            <button id="btn" >Calculate</button>
+        </form>
+        <div id="foot">
+
+            <br><br><br>
+        <h5>  -: BMI Weight Guide :- </h5>
+        <p>Under Weight = Less than 18.6 </p>
+        <p>Normal Range = 18.6 and 24.9</p>
+        <p>OverWeight = Greater than 24.9 </p>
+
+        </div>
+    </div>
+    
+<script>
+
+            const form = document.querySelector('form')
+            form.addEventListener('submit', function(event){
+                event.preventDefault();
+
+                // converting string values int numbers
+                const height = parseInt(document.querySelector("#height").value);
+                const weight = parseInt(document.querySelector("#weight").value);
+
+                if(height === '' || height <0 || isNaN(height)){
+                    alert(`please enter a valid height `)
+                }
+                else if(weight === '' || weight <0 || isNaN(weight)){
+                    alert(`please enter a valid weight `)
+                }
+                else{
+                    const bmi = ( weight / ((height*height)/10000) ).toFixed(2);
+                    const result = document.createElement('span');
+                    result.textContent = bmi;
+                    // result.innerText = 'BMI value is ';
+                    result.style.backgroundColor = '#313131'
+                    result.style.padding = '5px'
+                    result.style.color = 'yellow'
+                    result.style.borderRadius = '8px'
+                    form.appendChild(result);
+                }
+            });
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #313131">
+
+    <h1>Welcome to our website</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    <script>
+      function some() {
+        console.log("executed .");
+      }
+      // setTimeout(() => {
+      //     console.log('hi');
+      // }, 3000);
+
+
+      const work = setInterval(() => {
+        console.log("say hi");
+      }, 1000);
+
+      document.querySelector("#start").addEventListener("Click", function() {
+        setTimeout( work, 1000)
+      })
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(work);
+        console.log("Stopped");
+      });
+
+
+    </script>
+  </body>
+</html>

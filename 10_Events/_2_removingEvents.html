@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>click</button>
+
+    <script>
+
+        document.querySelector('body').style.backgroundColor ='#212121'
+        const btn = document.querySelector('button');
+        function clickedIn() {
+            alert('button clicked')
+        }
+
+        btn.addEventListener('click', clickedIn)
+        // btn.removeEventListener('click', clickedIn)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background: #313131; color: #fff; font-weight: 900;">
+    
+    <ul class="language">
+        <li >javaScript</li>
+    </ul>
+
+    <script>
+
+// In this approach the complete tree is traversed 
+// Add language – slower method (innerHTML - re-renders entire tree) 
+        function addLanguage(langName){
+        //  const ul = document.querySelector('.language')
+        const list = document.createElement('li')
+        list.innerHTML = `${langName}`
+        const ul = document.querySelector('ul')
+        ul.appendChild(list)
+        
+        }
+        addLanguage('python');
+
+// This is another approach for the same problem there is no traversing of complete tree
+// Optimized add – no innerHTML, uses textNod
+        function addOptimizedLanguage(langName) {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(langName))
+            const ul = document.querySelector('.language')
+            ul.appendChild(li)
+        }
+        addOptimizedLanguage('go')
+        addOptimizedLanguage('Rust')
+        addOptimizedLanguage('java')
+
+
+// Edit
+// Edit 2nd item → 'mojo'
+        const second = document.querySelector("li:nth-child(2)")
+        const newList = document.createElement('li')
+        newList.appendChild(document.createTextNode('mojo'))
+        second.replaceWith(newList)
+
+
+// Edit again
+// Edit 1st item → 'Typescript'
+        const first = document.querySelector('li:nth-child(1)')
+        const firstList = document.createElement('li')
+        firstList.appendChild(document.createTextNode('Typescript'))
+        // first.append(firstList)
+        first.replaceWith(firstList)
+
+
+// Delete/Remove 
+// Delete 3rd item
+        const third = document.querySelector('li:nth-child(3)')
+        third.remove()
+
+        
+    </script>
+
+</body>
+</html>

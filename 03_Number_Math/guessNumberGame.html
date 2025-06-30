@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess Number</title>
+</head>
+<body>
+
+  <script>
+
+    let maxNum = parseInt(prompt("Enter the max number:"));
+    const randomNum = Math.floor(Math.random() * maxNum) + 1; // 1 to maxNum
+
+    let guess = parseInt(prompt("Guess the number:"));
+    while (guess !== randomNum) {
+
+      if (guess > randomNum) {
+        guess = parseInt(prompt("Too high! Try again:"));
+      } 
+      else {
+        guess = parseInt(prompt("Too low! Try again:"));
+      }
+    }
+
+    alert("🎉 Correct! You guessed the number.");
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO</title>
+  </head>
+  <body>
+
+    <h1>TODO APP</h1>
+    <ul>
+      <li><h3>Add todo</h3></li>
+      <li><h3>Change todo</h3></li>
+      <li><h3>Delete todo</h3></li>
+    </ul>
+
+    <script>
+
+
+      let arr = []; // todo list array
+
+      while (true) {
+        let req = prompt("Enter your request (add, list, delete, quit):");
+
+        if (req === "quit") {
+          console.log("Quitting app...");
+          break;
+        } 
+        else if (req === "add") {
+          let todo = prompt("Enter todo:");
+          arr.push(todo);
+          console.log(`${todo} added to list`);
+        } 
+
+        else if (req === "list") {
+          console.log("------ TODO LIST ------");
+
+          for (let i = 0; i < arr.length; i++) {
+            console.log(`${i}: ${arr[i]}`);
+          }
+          console.log("-----------------------");
+        } 
+
+        else if (req === "delete") {
+
+          let index = prompt("Enter index to delete:");
+
+          if (arr[index]) {
+            console.log(`${arr[index]} deleted`);
+            arr.splice(index, 1);
+          } 
+          else {
+            console.log("Invalid index");
+          }
+
+        } 
+        
+        else {
+          console.log("Unknown command");
+        }
+
+      }
+
+    </script>
+  </body>
+</html>

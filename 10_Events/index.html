@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+
+    <div>
+        <button id="some" onclick="fun()">Click </button>
+    </div>
+    
+    <script>
+
+        let add = document.querySelector("body");
+        let newIs =  document.createElement('p')
+        newIs.innerHTML = "This is a paragraph"
+        newIs.style.color = 'red'
+        add.style.backgroundColor ='#212121'
+        add.appendChild(newIs)
+
+        function fun(event){
+            console.log(alert('ok'));
+            console.log(alert(event));
+        }
+        document.querySelector( '#some').addEventListener('click', function(event)  {
+            console.log(event); 
+        })
+
+    </script>
+</body>
+</html>

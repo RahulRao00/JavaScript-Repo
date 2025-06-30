@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background: #515151; color: #ffffff;">
+    
+    <div id="parent">
+
+            <div id="some"  class="class">Monday</div>
+            <div class="class">Tuesday</div>
+            <div class="class">Wednesday</div>
+            <div class="class">Thursday</div>
+           
+    </div>
+    <script>
+
+        const parent = document.querySelector('#parent')
+        console.log(parent.children[1].style.color = 'red');
+        console.log(parent.parentElement);
+        // console.log(parent.);
+        console.log(document.querySelector('.class').parent);
+        
+        for(let i = 0; i< parent.children.length; i++){
+            console.log(parent.children[i].innerHTML);
+        }
+        
+        console.log(parent.firstElementChild);
+        console.log(parent.lastElementChild);
+
+        const dayOne = document.querySelector('#some')
+        console.log(dayOne.parentElement);
+        console.log(dayOne.nextElementSibling);
+        
+        console.log(parent.childNodes);  // having 9 child nodes because every next line is considered as the node
+        
+           
+    </script>
+</body>
+</html>

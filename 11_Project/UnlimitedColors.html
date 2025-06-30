@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Changer</title>
+</head>
+<body>
+  <button id="start">START</button>
+  <button id="stop">STOP</button>
+
+  <script>
+    function randomColor() {
+      const hex = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    let intervalId = null;
+
+    function changeColor() {
+      document.body.style.backgroundColor = randomColor();
+    }
+
+    function startColorChange() {
+      if (intervalId) return; // prevent multiple intervals
+      intervalId = setInterval(changeColor, 100); // every 100ms
+      document.getElementById("start").disabled = true;
+      document.getElementById("stop").disabled = false;
+    }
+
+    function stopColorChange() {
+      clearInterval(intervalId);
+      intervalId = null;
+      document.getElementById("start").disabled = false;
+      document.getElementById("stop").disabled = true;
+    }
+
+    document.getElementById("start").addEventListener("click", startColorChange);
+    document.getElementById("stop").addEventListener("click", stopColorChange);
+
+    // disable stop button initially
+    document.getElementById("stop").disabled = true;
+  </script>
+</body>
+</html>

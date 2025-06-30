@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Number Box</title>
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 50px;">
+
+  <div style="background-color: #212121; height: 100px; width: 100px; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px;" class="box">
+    <!-- Random number yahan show hoga -->
+  </div>        
+
+  <button class="btn">Random Number</button>
+
+
+  <script>
+    let btn = document.querySelector(".btn");
+    let box = document.querySelector(".box");
+
+
+    // Button click pe random number generate hoga
+    btn.addEventListener('click', function () {
+      let randomNumber = Math.floor(Math.random() * 10) + 1; // 1–10
+      console.log(randomNumber);  // console check
+      box.innerHTML = randomNumber; // box me number show
+    }
+   );
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE DOM COLOR CHANGER</title>
+    <style>
+        .btn{
+            color: black;
+            /* font-weight: 900; */
+            font-size:medium;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+        }
+        #parent {
+            background: #414141;
+            border-radius: 10px;
+            border: 2px solid black;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        body {
+            background: #414141;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lime {
+            background-color: lime;
+        }
+        
+        #green {
+            background-color: green;
+        }
+        
+        #pink {
+            background-color: pink;
+        }
+        
+        #yellow {
+            background-color: yellow;
+        }
+        
+        #brown {
+            background-color: brown;
+        }
+        
+        #aqua {
+            background-color: aqua;
+        }
+
+        #gray {
+            background-color: gray;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="parent">
+
+        <button id="lime" class="btn">lime</button>
+        <button id="green" class="btn">green</button>
+        <button id="pink" class="btn">pink</button>
+        <button id="yellow" class="btn">yellow</button>
+        <button id="brown" class="btn">brown</button>
+        <button id="aqua" class="btn">aqua</button>
+        <button id="gray" class="btn">grey</button>
+        <button id="blue" class="btn">blue</button>
+
+    </div>
+    
+    <script>
+
+        const btn = document.querySelectorAll('.btn')
+        // console.log(btn);
+        const body = document.querySelector("body");
+        btn.forEach(function(btn){
+            // console.log(btn);
+            btn.addEventListener('click', function(event){
+                // console.log(event);
+                // console.log(event.target); --> its returns that which event is takes place 
+
+                if(event.target.id === "lime"){
+                    body.style.backgroundColor = event.target.id
+                }
+
+                else if(event.target.id === "green"){
+                    body.style.backgroundColor = event.target.id
+                }
+
+                else if(event.target.id === "pink"){
+                    body.style.backgroundColor = event.target.id
+                }
+
+                else if(event.target.id === "yellow"){
+                    body.style.backgroundColor = event.target.id
+                }
+
+                else if(event.target.id === "brown"){
+                    body.style.backgroundColor = event.target.id
+                }
+                
+                else if(event.target.id === "aqua"){
+                    body.style.backgroundColor = event.target.id
+                }
+
+                else if(event.target.id === "gray"){
+                    body.style.backgroundColor = event.target.id
+                }
+
+                else if(event.target.id === "blue"){
+                    body.style.backgroundColor = event.target.id
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>

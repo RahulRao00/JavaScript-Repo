@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121">
+    <ul>
+      <li>
+        <img
+          id="wolf"
+          src="https://imgs.search.brave.com/vEndMzRa3yhfknV-7q3Aie7K1ZEbT20u67auwtTD3pI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9waXhu/aW8uY29tL2ZyZWUt/aW1hZ2VzL2ZhdW5h/LWFuaW1hbHMvZm94/ZXMtYW5kLXdvbHZl/cy9ncmF5LXdvbGYt/aGVhZC1jYW5pcy1s/dXB1cy01NzZ4NzE5/LmpwZw"
+          alt=""
+          srcset=""
+          height="200px"
+          width="200px"
+        />
+      </li>
+
+      <li>
+        <img
+          id="seal"
+          src="https://imgs.search.brave.com/QY9TK8gq59MzCbwl0GYTg3hCmse1CrYnxDr9hzqvyTk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9waXhu/aW8uY29tL2ZyZWUt/aW1hZ2VzL2ZhdW5h/LWFuaW1hbHMvbWFu/YXRlZS1waWN0dXJl/cy9tYW5hdGVlLXRy/aWNoZWNodXMtbWFu/YXR1cy1sYXRpcm9z/dHJpcy1jbG9zZS11/cC11bmRlcndhdGVy/LXBob3RvLTU3Nng4/NjEuanBn"
+          alt=""
+          srcset=""
+          height="200px"
+          width="200px"
+        />
+      </li>
+
+      <li>
+        <img
+          id="cat"
+          src="https://imgs.search.brave.com/LcX6AEdNqHxpufL05spBeSSMnTP9h38NQJOxoA_a6l4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/Mi8yMC8xOC8wMy9j/YXQtMjA4MzQ5Ml82/NDAuanBn"
+          alt=""
+          srcset=""
+          height="200px"
+          width="200px"
+        />
+      </li>
+
+      <li>
+        <img id="horse"
+        src="https://imgs.search.brave.com/LO4tXqNkxQcz90_VkQPYlPBFUlwVmKXEa4ds8U0UwdA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI5/MDU2MDQ3Mi9waG90/by9nYWxsb3Bpbmct/d2lsZC1ob3JzZXMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PURtVllmeW5mT25H/eEpac2ZZVzU0a2xV/YnctaFA3VkY2MHZx/Z2lFaUR4TWc9"
+        alt="" srcset="" height=200px" width="200px" >
+      </li>
+
+      <li>
+        <a id="google" href="https://www.google.com">google</a>
+      </li>
+    </ul>
+
+    <script>
+      /**
+       * third parameter is default false
+       * event capturing -> true -> top to bottom
+       * event  propagation/bubbling -> false -> spread toward outside
+       * **/
+
+      document.querySelector("ul").addEventListener(
+        "click",
+        (e) => {
+          console.log("ul is clicked ");
+          // e.stopPropagation();
+        },
+        true
+      );
+
+      document.querySelector("#wolf").addEventListener(
+        "click",
+        (e) => {
+          // console.log('wolf clicked ');
+          // e.stopPropagation();
+          // e.target.parentNode.remove()
+        },
+        true
+      );
+
+      document.querySelector("#google").addEventListener("click", (e) => {
+        console.log("google is clicked ");
+        e.preventDefault();
+        e.stopPropagation();
+      });
+
+      document.querySelector("ul").addEventListener("click", (e) => {
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+          e.target.parentNode.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

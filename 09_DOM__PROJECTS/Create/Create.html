@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="para"> This is a paragraph  </p>
+    <button>Change text </button>
+
+    <br><br><br>
+
+    <img id="one" src="image.png" alt="image1" height="200px" width="200px">
+    <img id="two" src="walpaper..png" alt="image2" height=" 200px" width="200px ">
+    <button id="img">Change image</button>
+
+    <script>
+
+        document.querySelector('button').addEventListener('click', ()=>{
+            document.querySelector('#para')
+            .innerHTML = '<p> Paragraph Text is changed '
+                
+        });
+ 
+        document.querySelector('#img').addEventListener('click', () => {
+        let img1 =   document.querySelector('#one').getAttribute('src') 
+        let img2 =   document.querySelector('#two').getAttribute('src')
+
+         img1 =   document.querySelector('#two').getAttribute('src') 
+         img2 =   document.querySelector('#one').getAttribute('src') 
+
+        document.querySelector('body').append('image.png') 
+        document.querySelector('body').append('walpaper..png') 
+        
+        console.log(img1);
+        console.log(img2);
+         })
+        
+
+    </script>
+</body>
+</html>
