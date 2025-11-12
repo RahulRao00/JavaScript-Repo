@@ -28,3 +28,4 @@ console.log(sum);
 marks.forEach(function (val) {
     console.log(val);
 });
+
